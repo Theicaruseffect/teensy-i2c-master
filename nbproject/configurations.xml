@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="common">
+        <in>arm_cm4.c</in>
+        <in>sysinit.c</in>
+      </df>
+      <df name="include">
+        <in>i2c_master.h</in>
+      </df>
+      <df name="src">
+        <in>i2c_master.c</in>
+        <in>main.c</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>GCC_ARM|GNU</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>bin/robot-interface.elf</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>include</pElem>
+              <pElem>.</pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="common/arm_cm4.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="common/sysinit.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="include/i2c_master.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/i2c_master.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

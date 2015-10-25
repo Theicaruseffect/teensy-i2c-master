@@ -1,0 +1,12 @@
+arm-none-eabi-gcc -Wall -fno-common -mthumb -mcpu=cortex-m4 -Iinclude -c src/main.c -o obj/main.o
+src/main.c:30:14: warning: 'masterTxSetup' defined but not used [-Wunused-variable]
+ static short masterTxSetup = 0;
+              ^
+src/main.c:32:14: warning: 'masterTxStarted' defined but not used [-Wunused-variable]
+ static int   masterTxStarted = 0;
+              ^
+arm-none-eabi-gcc -Wall -fno-common -mthumb -mcpu=cortex-m4 -Iinclude -c common/sysinit.c -o obj/sysinit.o
+arm-none-eabi-gcc -Wall -fno-common -mthumb -mcpu=cortex-m4 -Iinclude -c common/arm_cm4.c -o obj/arm_cm4.o
+arm-none-eabi-as -mcpu=cortex-m4 -o obj/crt0.o common/crt0.s
+arm-none-eabi-gcc obj/main.o obj/sysinit.o obj/arm_cm4.o obj/crt0.o -nostartfiles -Tcommon/Teensy31_flash.ld -mthumb -mcpu=cortex-m4 -o bin/robot-interface.elf
+arm-none-eabi-objcopy -R .stack -O ihex bin/robot-interface.elf bin/robot-interface.hex
